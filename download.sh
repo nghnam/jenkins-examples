@@ -9,8 +9,8 @@ declare -a dataset=(
 )
 
 for ds in "${dataset[@]}"; do
-    fn=$(echo $ds | awk -F'/' '{print $NF}')
+    fn=${ds##*/}
     if [ ! -f "$DATA_DIR/$fn" ]; then
-        wget $ds -P $DATA_DIR
+        wget "$ds" -P "$DATA_DIR"
     fi
 done
