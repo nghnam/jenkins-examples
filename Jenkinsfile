@@ -1,6 +1,5 @@
 pipeline {
     agent none
-    def modelName = 'Mnist - softmax'
     parameters {
         string (
             defaultValue: 'mnist',
