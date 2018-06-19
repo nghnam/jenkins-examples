@@ -70,7 +70,7 @@ def main(_):
       accuracy, feed_dict={
           x: mnist.test.images,
           y_: mnist.test.labels
-      }))
+      })
   with open('/report/mnist_report.txt', 'a') as f:
       f.write(acc + '\n')
 
