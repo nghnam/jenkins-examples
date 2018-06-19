@@ -23,7 +23,7 @@ pipeline {
             agent {
                 docker {
                     image 'cinnamon/nvidia-gpu:8.0-cudnn6-runtime'
-                    args '--runtime=nvidia -v /data:/data'
+                    args '--runtime=nvidia -v /data:/tmp/tensorflow/mnist/input_data'
                     alwaysPull false
                 }
             }
