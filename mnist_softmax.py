@@ -72,8 +72,8 @@ def main(_):
           y_: mnist.test.labels
       })
   print(acc, type(acc))
-  #with open('/report/mnist_report.txt', 'a') as f:
-  #    f.write(accuracy + '\n')
+  with open('/report/mnist_report.txt', 'a') as f:
+      f.write(str(acc) + '\n')
 
 
 if __name__ == '__main__':
