@@ -8,7 +8,7 @@ pipeline {
   }
   agent {
     docker {
-      image 'ubuntu:latest'
+      image 'python:latest'
     }
   }
   stages {
@@ -16,6 +16,7 @@ pipeline {
       steps {
         sh 'cat /etc/os-release'
         sh 'ls'
+        sh 'pip3 install -r requirements.txt'
         sh 'echo $DATASET'
       }
     }
