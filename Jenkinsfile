@@ -1,13 +1,11 @@
 pipeline {
     agent none
+    def modelName = 'Mnist - softmax'
     parameters {
         string (
             defaultValue: 'mnist',
             description: '',
             name: 'model'
-        )
-        string (
-
         )
     }
     stages {
@@ -20,6 +18,7 @@ pipeline {
             }
             steps {
                 sh 'ls && bash download.sh'
+                sh 'echo ${modelName}'
             }
         }
 
