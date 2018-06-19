@@ -6,20 +6,28 @@ pipeline {
             name: 'DATASET'
         )
     }
-    agent {
-        docker {
-            image 'python:latest'
-            args '-v /models:/models'
-        }
-    }
     stages {
-        stage('Build') {
+        stage('Get dataset') {
+            agent {
+                docker {
+                    image 'system/tool:latest'
+                    args '-v /data:/data'
+                }
+            }
             steps {
-                sh 'cat /etc/os-release'
-                sh 'ls'
-                sh 'pip3 install -r requirements.txt'
-                sh 'ls /models && cat /models/test.txt'
-                sh 'echo $DATASET'
+                sh 'ls && bash download.sh'
+            }
+        }
+        stage('Evaluate') {
+            agent {
+                docker {
+                    image 'cinnamon/nvidia-gpu:8.0-cudnn6-runtime'
+                    args '--runtime=nvidia -v /data:/data'
+                    alwaysPull false
+                }
+            }
+            steps {
+                sh 'python3 mnist_softmax.py'
             }
         }
     }
