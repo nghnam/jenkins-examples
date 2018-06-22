@@ -22,5 +22,6 @@
             "name": "",
             "url": ""
         }
-    ]
+    ],
+    "image": "cinnamon/nvidia-gpu:8.0-cudnn6-runtime"
 }
