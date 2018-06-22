@@ -71,7 +71,7 @@ def main(_):
           x: mnist.test.images,
           y_: mnist.test.labels
       })
-  print(acc, type(acc))
+  print(acc)
   with open('/report/mnist_report.txt', 'a') as f:
       f.write(str(acc) + '\n')
 
