@@ -1,0 +1,26 @@
+{
+    "datasets": [
+        {
+            "name": "train-images-idx3-ubyte.gz",
+            "url": "http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz"
+        },
+        {
+            "name": "train-labels-idx1-ubyte.gz",
+            "url": "http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz"
+        },
+        {
+            "name": "t10k-images-idx3-ubyte.gz",
+            "url": "http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz"
+        },
+        {
+            "name": "t10k-labels-idx1-ubyte.gz",
+            "url": "http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz"
+        }
+    ],
+    "models": [
+        {
+            "name": "",
+            "url": ""
+        }
+    ]
+}
