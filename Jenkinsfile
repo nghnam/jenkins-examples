@@ -10,6 +10,10 @@ pipeline {
     stage('Test') {
       steps {
         sh 'ls; pwd; df -h'
+        ws(dir: 'fsdfs') {
+          sh 'pwd'
+        }
+
       }
     }
   }
