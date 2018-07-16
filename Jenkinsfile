@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Test') {
       steps {
-        sh 'ls; pwd; ip -4 a'
+        sh 'ls; pwd; df -h'
       }
     }
   }
